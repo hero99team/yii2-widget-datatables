@@ -10,6 +10,7 @@ namespace fedemotta\datatables;
 use yii\helpers\Json;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\grid\GridViewAsset;
 
 
 /**
@@ -49,7 +50,7 @@ class DataTables extends \yii\grid\GridView
         
         //Bootstrap3 Asset by default
         DataTablesBootstrapAsset::register($view);
-        
+        GridViewAsset::register($view);
         //TableTools Asset if needed
         if (isset($clientOptions["tableTools"]) || (isset($clientOptions["dom"]) && strpos($clientOptions["dom"], 'T')>=0)){
             $tableTools = DataTablesTableToolsAsset::register($view);
